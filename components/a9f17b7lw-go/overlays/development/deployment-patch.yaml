@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: a9f17b7lw-go
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/dance-bootstrap-app:latest
-        name: container-image  
+        - image: nexus-docker-nexus.apps.rosa.rhtap-services.xmdt.p3.openshiftapps.com/rhtap/rhtap-qe-go:ecec1c373b28aff796c20ed088704be1f40eba98@sha256:bc989ded300994bfe5eda1cd6954d64c2be3bf9e06e8da082e871fd4f313f21a
+          name: container-image
